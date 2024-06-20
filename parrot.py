@@ -43,7 +43,14 @@ class Parrot:
         return 12.0
 
 
+class EuropeanParrot(Parrot):
+    def __init__(self):
+        super().__init__(ParrotType.EUROPEAN, 0, 0, False)
+
+
 def parrot_factory(parrot_type, number_of_coconuts=0, voltage=0, nailed=False):
     if parrot_type not in ParrotType:
         raise ValueError(f"Invalid parrot type: {parrot_type}")
+    if parrot_type == ParrotType.EUROPEAN:
+        return EuropeanParrot()
     return Parrot(parrot_type, number_of_coconuts, voltage, nailed)
