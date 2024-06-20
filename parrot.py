@@ -8,10 +8,6 @@ class ParrotType(Enum):
 
 
 class Parrot:
-
-    def __init__(self, type_of_parrot):
-        self._type = type_of_parrot
-
     def _load_factor(self):
         return 9.0
 
@@ -20,8 +16,6 @@ class Parrot:
 
 
 class EuropeanParrot(Parrot):
-    def __init__(self):
-        super().__init__(ParrotType.EUROPEAN)
 
     def speed(self):
         return self._base_speed()
@@ -32,7 +26,6 @@ class EuropeanParrot(Parrot):
 
 class AfricanParrot(Parrot):
     def __init__(self, number_of_coconuts):
-        super().__init__(ParrotType.AFRICAN)
         self._number_of_coconuts = number_of_coconuts
 
     def speed(self):
@@ -46,7 +39,6 @@ class NorwegianBlueParrot(Parrot):
     def __init__(self, voltage, nailed):
         self._voltage = voltage
         self._nailed = nailed
-        super().__init__(ParrotType.NORWEGIAN_BLUE)
 
     def _compute_base_speed_for_voltage(self, voltage):
         return min([24.0, voltage * self._base_speed()])
