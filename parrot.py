@@ -15,15 +15,6 @@ class Parrot:
         self._voltage = voltage
         self._nailed = nailed
 
-    def cry(self):
-        match self._type:
-            case ParrotType.EUROPEAN:
-                return "Sqoork!"
-            case ParrotType.AFRICAN:
-                return "Sqaark!"
-            case ParrotType.NORWEGIAN_BLUE:
-                return "Bzzzzzz" if self._voltage > 0 else "..."
-
     def _compute_base_speed_for_voltage(self, voltage):
         return min([24.0, voltage * self._base_speed()])
 
@@ -41,6 +32,9 @@ class EuropeanParrot(Parrot):
     def speed(self):
         return self._base_speed()
 
+    def cry(self):
+        return "Sqoork!"
+
 
 class AfricanParrot(Parrot):
     def __init__(self, number_of_coconuts):
@@ -49,6 +43,9 @@ class AfricanParrot(Parrot):
     def speed(self):
         return max(0, self._base_speed() - self._load_factor() * self._number_of_coconuts)
 
+    def cry(self):
+        return "Sqaark!"
+
 
 class NorwegianBlueParrot(Parrot):
     def __init__(self, voltage, nailed):
@@ -56,6 +53,9 @@ class NorwegianBlueParrot(Parrot):
 
     def speed(self):
         return 0 if self._nailed else self._compute_base_speed_for_voltage(self._voltage)
+
+    def cry(self):
+        return "Bzzzzzz" if self._voltage > 0 else "..."
 
 
 def parrot_factory(parrot_type, number_of_coconuts=0, voltage=0, nailed=False):
