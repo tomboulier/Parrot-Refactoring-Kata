@@ -1,3 +1,11 @@
 .vs
 .idea/
 .DS_Store
+*.pyc
+.cache
+__pycache__
+.idea
+*.iml
+.project
+.pydevproject
+.settings
