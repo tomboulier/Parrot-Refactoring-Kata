@@ -59,8 +59,12 @@ class NorwegianBlueParrot(Parrot):
 
 
 def parrot_factory(parrot_type, number_of_coconuts=0, voltage=0, nailed=False):
-    if parrot_type not in ParrotType:
-        raise ValueError(f"Invalid parrot type: {parrot_type}")
-    if parrot_type == ParrotType.EUROPEAN:
-        return EuropeanParrot()
-    return Parrot(parrot_type, number_of_coconuts, voltage, nailed)
+    match parrot_type:
+        case ParrotType.EUROPEAN:
+            return EuropeanParrot()
+        case ParrotType.AFRICAN:
+            return AfricanParrot(number_of_coconuts)
+        case ParrotType.NORWEGIAN_BLUE:
+            return NorwegianBlueParrot(voltage, nailed)
+
+    raise ValueError(f"Invalid parrot type: {parrot_type}")
