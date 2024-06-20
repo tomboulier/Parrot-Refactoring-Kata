@@ -15,9 +15,6 @@ class Parrot:
         self._voltage = voltage
         self._nailed = nailed
 
-    def _compute_base_speed_for_voltage(self, voltage):
-        return min([24.0, voltage * self._base_speed()])
-
     def _load_factor(self):
         return 9.0
 
@@ -50,6 +47,9 @@ class AfricanParrot(Parrot):
 class NorwegianBlueParrot(Parrot):
     def __init__(self, voltage, nailed):
         super().__init__(ParrotType.NORWEGIAN_BLUE, 0, voltage, nailed)
+
+    def _compute_base_speed_for_voltage(self, voltage):
+        return min([24.0, voltage * self._base_speed()])
 
     def speed(self):
         return 0 if self._nailed else self._compute_base_speed_for_voltage(self._voltage)
