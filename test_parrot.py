@@ -54,3 +54,10 @@ def test_cry_norwegian_blue_parrot_high_voltage():
 def test_cry_norwegian_blue_parrot_no_voltage():
     parrot = parrot_factory(ParrotType.NORWEGIAN_BLUE, 0, 0, False)
     assert parrot.cry() == "..."
+
+
+def test_invalid_parrot_type():
+    try:
+        parrot_factory("INVALID_PARROT_TYPE", 0, 0, False)
+    except ValueError as e:
+        assert str(e) == "Invalid parrot type: INVALID_PARROT_TYPE"
