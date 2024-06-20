@@ -8,7 +8,8 @@ class ParrotType(Enum):
 
 
 class Parrot:
-    def _base_speed(self):
+    @staticmethod
+    def _base_speed():
         return 12.0
 
 
