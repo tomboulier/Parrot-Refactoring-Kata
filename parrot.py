@@ -48,6 +48,16 @@ class EuropeanParrot(Parrot):
         super().__init__(ParrotType.EUROPEAN, 0, 0, False)
 
 
+class AfricanParrot(Parrot):
+    def __init__(self, number_of_coconuts):
+        super().__init__(ParrotType.AFRICAN, number_of_coconuts, 0, False)
+
+
+class NorwegianBlueParrot(Parrot):
+    def __init__(self, voltage, nailed):
+        super().__init__(ParrotType.NORWEGIAN_BLUE, 0, voltage, nailed)
+
+
 def parrot_factory(parrot_type, number_of_coconuts=0, voltage=0, nailed=False):
     if parrot_type not in ParrotType:
         raise ValueError(f"Invalid parrot type: {parrot_type}")
