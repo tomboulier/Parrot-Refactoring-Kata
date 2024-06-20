@@ -41,3 +41,9 @@ class Parrot:
 
     def _base_speed(self):
         return 12.0
+
+
+def parrot_factory(parrot_type, number_of_coconuts=0, voltage=0, nailed=False):
+    if parrot_type not in ParrotType:
+        raise ValueError(f"Invalid parrot type: {parrot_type}")
+    return Parrot(parrot_type, number_of_coconuts, voltage, nailed)
