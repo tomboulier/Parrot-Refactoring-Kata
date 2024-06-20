@@ -5,7 +5,7 @@ Kata from Emily Bache, created in order to learn polymorphism. This is one attem
 
 _Support her work via [Patreon](https://www.patreon.com/EmilyBache)_
 
-She made a [video explaining this kata](https://youtu.be/UxNEHKg_2eA), and another [video with a worked solution in Python]([https://youtu.be/IvFX8Ivit1k](https://www.youtube.com/watch?v=pO_5DQ3vDtc&ab_channel=EmilyBache)).
+She made a [video explaining this kata](https://youtu.be/UxNEHKg_2eA), and another [video with a worked solution in Python](https://www.youtube.com/watch?v=pO_5DQ3vDtc&ab_channel=EmilyBache).
 
 Python version of the Parrot Refactoring Kata
 =============================================
